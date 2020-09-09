@@ -1,0 +1,91 @@
+body,
+html {
+  background-color: #f7f7fa;
+}
+
+hr {
+  margin: 1.5em 0;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+pre > code {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background-color: rgba(0, 0, 0, 0.075);
+  white-space: pre;
+}
+
+blockquote {
+  margin: 16px;
+  padding: 0.75em 0.5em;
+  border-left: rgba(0, 0, 0, 0.075) 4px solid;
+  line-height: normal;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace !important;
+}
+
+img {
+  max-width: 100%;
+  border-style: none;
+}
+
+code,
+pre,
+samp {
+  font-family: Roboto Mono, Lucida Sans Typewriter, Lucida Console, monaco, Courrier, monospace;
+  font-size: 0.85em;
+}
+
+code {
+  padding: 2px 4px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+td,
+th {
+  padding: 8px 12px !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+td:last-child,
+th:last-child {
+  border-right: 0;
+}
+
+td {
+  border-top: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+:focus {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 31px;
+  box-shadow: 2px 4px 4px #4444;
+  background-color: #585858;
+}
+
+::-webkit-scrollbar-track-piece {
+  box-sizing: border-box;
+}

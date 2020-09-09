@@ -1,0 +1,250 @@
+$animeton-props: 0.5s ease forwards;
+
+.app {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+
+  &--expend {
+    .editor {
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    .preview {
+      width: calc(100% - 2em);
+    }
+  }
+
+  &--collapse {
+    .editor {
+      width: calc(100% - 4em);
+    }
+
+    .preview {
+      width: 4em;
+    }
+  }
+}
+
+.header {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  width: 100%;
+  border-radius: 0 0 12px 0;
+  box-shadow: 0 8px 32px #4442;
+  .rs-navbar-header {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    a {
+      font-size: 1.25em;
+    }
+  }
+  input {
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    font-size: 2em;
+    font-weight: bold;
+    &:focus,
+    &:active {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    &::placeholder {
+      opacity: 0.33;
+    }
+  }
+  &__backdrop {
+    position: absolute;
+    z-index: 6;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    animation: drop-in $animeton-props;
+  }
+  .rs-navbar-body ul {
+    left: 0;
+    display: flex;
+    padding: 0;
+    border-radius: 0 0 12px 0;
+    background-color: #fff;
+    text-align: center;
+    list-style: none;
+    a {
+      height: unset !important;
+      font-size: 1.25em;
+      line-height: 1.25em;
+      svg {
+        margin-right: 0.5em;
+      }
+      &:hover {
+        background-color: #0000000f;
+      }
+    }
+  }
+}
+
+.panel {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  border: 0.625rem solid transparent;
+  border-bottom: 0;
+  transition: width 1s cubic-bezier(0.75, -0.3, 0.125, 1.25), opacity 1s ease;
+}
+
+.editor {
+  flex-direction: column;
+  width: 50%;
+  height: calc(100% - 6em);
+  margin-top: 1.5em;
+  textarea {
+    overflow-x: hidden;
+    height: 100%;
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+    overflow-y: visible;
+    resize: none;
+  }
+  &__toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: #e5e5ea solid 1px;
+  }
+}
+
+.preview {
+  z-index: 5;
+  right: 0;
+  width: 50%;
+  height: calc(100% - 6em);
+  margin-top: 2em;
+  border-radius: 12px 0 0 0;
+  box-shadow: 0 16px 32px #4442;
+  background-color: #fff;
+
+  &__markdown {
+    overflow-x: hidden;
+    width: 100%;
+    min-width: calc(50vw - 64px);
+    padding-right: 8px;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+  }
+
+  &__panel-contorl {
+    align-self: center;
+    padding-right: 0.625rem;
+
+    button {
+      display: block;
+      margin: 0.25em 0;
+      padding: 0;
+      font-size: 1.25em;
+      line-height: 1.25em;
+    }
+  }
+
+  &__sync-scroll-icon {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.footer {
+  position: relative;
+  z-index: 5;
+  margin: auto auto 0;
+  transition: transform 0.5s ease-out;
+  transform: translateY(100%);
+
+  a {
+    border-radius: 12px 12px 0 0 !important;
+    box-shadow: 0 -8px 32px #4442 !important;
+    background-color: #fff;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    display: inline;
+    .rs-navbar-header {
+      border-radius: 0 0 12px 0;
+      box-shadow: 0 8px 32px #4442;
+      li:last-of-type a {
+        border-radius: 0 0 12px 0 !important;
+      }
+    }
+    .rs-navbar-body ul {
+      position: absolute;
+      z-index: -1;
+      top: 44px;
+      display: block !important;
+      width: 100vw;
+      padding-top: 12px;
+      border-radius: 0 0 1em 1em !important;
+      box-shadow: 0 8px 32px #4442;
+      animation: drawer-in $animeton-props;
+      transform: translateY(-101%);
+      a {
+        padding: 1.25em !important;
+      }
+    }
+  }
+  .header--close {
+    .rs-navbar-body ul {
+      animation: drawer-out $animeton-props;
+    }
+    .header__backdrop {
+      animation: drop-out $animeton-props;
+    }
+  }
+  .editor {
+    width: calc(100% - 4em);
+  }
+}
+
+@keyframes drawer-in {
+  0% {
+    transform: translateY(-101%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes drawer-out {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-101%);
+  }
+}
+
+@keyframes drop-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes drop-out {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
+}

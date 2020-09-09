@@ -1,0 +1,133 @@
+body {
+  background-color: #f7f7fa;
+}
+
+// pre {
+// font-family: monospace, monospace;
+// font-size: 1em;
+// & > code {
+// display: block;
+// overflow-x: auto;
+// padding: 0.5em;
+// background-color: rgba(0, 0, 0, 0.075);
+// white-space: pre;
+//   }
+// }
+
+blockquote {
+  margin: 16px;
+  padding: 0.75em 0.5em;
+  border-left: rgba(0, 0, 0, 0.075) 4px solid;
+  line-height: normal;
+
+  p {
+    margin: 0;
+  }
+}
+
+// code,
+// kbd,
+// samp {
+// font-family: monospace !important;
+// }
+
+img {
+  max-width: 100%;
+  border-style: none;
+}
+
+// code,
+// pre,
+// samp {
+// font-family: Roboto Mono, Lucida Sans Typewriter, Lucida Console, monaco, Courrier, monospace;
+// font-size: 0.85em;
+// }
+
+code {
+  padding: 2px 4px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+// table {
+// border-collapse: collapse;
+// border-spacing: 0;
+//   background-color: transparent;
+// }
+td,
+th {
+  padding: 8px 12px !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+td:last-child,
+th:last-child {
+  border-right: 0;
+}
+
+td {
+  border-top: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+// kbd {
+//   display: inline-block;
+//   margin: 0 0.1em;
+//   padding: 0.1em 0.6em;
+//   border: 1px solid rgba(63, 63, 63, 0.25);
+//   border-radius: 3px;
+//   box-shadow: 0 1px 0 rgba(63, 63, 63, 0.25);
+//   background-color: #fff;
+//   font-size: 0.8em;
+//   white-space: nowrap;
+// }
+// * {
+//   outline: 1px blue solid;
+// }
+
+:focus {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 31px;
+  box-shadow: 2px 4px 4px #4444;
+  background-color: #585858;
+}
+
+::-webkit-scrollbar-track-piece {
+  box-sizing: border-box;
+}
+
+// ::-webkit-scrollbar {
+//   width: 1.75em;
+//   height: 1.75em;
+// }
+// ::-webkit-scrollbar-thumb {
+//   height: 1em;
+//   padding: 0.5em;
+//   border: 0.5em solid transparent;
+//   border-radius: 0.7em;
+//   // box-shadow: 2px 4px 4px #4444;
+//   background-color: #1890ff;
+//   background-clip: padding-box;
+//   &::after {
+//     content: '';
+//     width: 42px;
+//     height: 51px;
+//     background-color: #79150d;
+//   }
+// }
+// ::-webkit-scrollbar-button {
+//   width: 0;
+//   height: 0;
+//   display: none;
+// }
+// ::-webkit-scrollbar-corner {
+//   background-color: transparent;
+// }
