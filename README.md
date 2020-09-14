@@ -22,15 +22,13 @@ To Visit App:
 
 ## Languages & tools
 
-### JavaScript
+### TypeScript
 
 - React
 - React-use-Sync-Scroll
-- TypeScript
 
-### CSS
+### SCSS
 
-- SCSS
 - Rsuite
 - React-Icons
 
